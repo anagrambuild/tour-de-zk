@@ -12,20 +12,25 @@ In summary, Solana presents a compelling combination of technical capabilities f
 ## Solana ZK features
 
 ### Runtime features
-All the avaialabler syscalls are here [Syscalls|https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/syscalls/definitions.rs#L65]
+All the avaialabler syscalls are here [Syscalls](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/syscalls/definitions.rs#L65).
+
 Syscalls allow these computations to be cheaper within the SVM.
 Notably
-* Poseidon Hash Function Syscall - [Hash|https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/poseidon.rs#L170]
-* Barreto-Naehrig Curve/Group operations - [Curve/Group|https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/alt_bn128/mod.rs]
-* 
+* Poseidon Hash Function Syscall - [Hash](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/poseidon.rs#L170)
+* Barreto-Naehrig Curve/Group operations - [Curve/Group](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/alt_bn128/mod.rs)
+* 21559 Ristretto and Edwards Curve/Group Operations: example of using them I cant find the impl code  - [Curve/Group](https://github.com/solana-labs/solana/tree/501458a7daa023eb2c64a18d54ad618d4305af68/zk-token-sdk/src/curve25519) see edwards and ristretto rust modules.
 
 
 ### Solana Vended Contracts/Programs  
 
-* zk token program - [Solana Docs|https://docs.solana.com/developing/runtime-facilities/zk-token-proof]
-* 
+* zk token program - [Solana Docs](https://docs.solana.com/developing/runtime-facilities/zk-token-proof)
+* Stealth ,Written by a former solana labs employee Larry Wu [Stealth](https://github.com/metaplex-foundation/metaplex-incubating-programs/tree/main/stealth) not strictly ZK but a good look at how to crank math over multuple transactions.
 
 ### Solana Ecosystem Zk Projects
+* Elusiv - [V1 Verifier Contract](https://github.com/elusiv-privacy/elusiv/blob/master/elusiv/src/instruction.rs) 
+* Light Protocol - [Repo](https://github.com/Lightprotocol/light-protocol) also docs [docs](https://docs.lightprotocol.com/core-concepts/lifecycle-of-a-light-transaction)
+* * [Groth16 Verifier ](https://github.com/Lightprotocol/groth16-solana)
+* Another Groth16 [Verifier ](https://github.com/aneopsy/groth16-sol-verifier/blob/main/README.md)
+* Yet another Groth16 [Verifier](https://github.com/zkLinkProtocol/groth16-sol-verifier)
+* Possibly some good examples of varios proof systems relating to solana [Click Here](https://github.com/umi-ag/sion/tree/alpha/crates-solana)
 
-
-### Random stuff I found on the int-tar-weps(internet)
