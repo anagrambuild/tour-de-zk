@@ -1,5 +1,5 @@
-# Solana is a ZK chain
-In the evolving landscape of blockchain technology, Solana stands out as a highly capable Layer 1 (L1) blockchain, especially for those looking to develop zero-knowledge (ZK) applications. This article explores the features that make Solana an attractive platform for such advanced cryptographic endeavors.
+# Solana is a zk chain
+Solana stands out as a highly capable Layer 1 (L1) blockchain, especially for those looking to develop zero-knowledge (ZK) applications. Below is a list of great zk resources, but first why solana?
 
 A key aspect of Solana's suitability for ZK applications is its runtime support for elliptic curve operations. Elliptic curve cryptography (ECC) is a cornerstone in the construction of ZK proofs, which enable one party to prove the truth of a statement to another party without revealing any underlying data. Solana's native support for these operations significantly simplifies the development process, allowing for more efficient and secure implementation of ZK proofs.
 
