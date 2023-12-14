@@ -16,10 +16,11 @@ All the available syscalls are here [Syscalls](https://github.com/solana-labs/so
 
 Syscalls allow these computations to be cheaper within the SVM.
 Notably
-* Poseidon Hash Function Syscall - [Hash](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/poseidon.rs#L170)
 * Barreto-Naehrig Curve/Group operations - [Curve/Group](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/alt_bn128/mod.rs)
 * 21559 Ristretto and Edwards Curve/Group Operations: example of using them I cant find the impl code  - [Curve/Group](https://github.com/solana-labs/solana/tree/501458a7daa023eb2c64a18d54ad618d4305af68/zk-token-sdk/src/curve25519) see edwards and ristretto rust modules.
-
+* Poseidon Hash Function Syscall - [Hash](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/poseidon.rs#L170) (to be activated in [v1.17](https://github.com/solana-labs/solana/issues/33073))
+* Altbn128 [Syscall](https://github.com/ananas-block/solana/blob/master/sdk/program/src/alt_bn128.rs) - cheap elliptic curve operations over the bn256(bn254/alt-bn128) curve. Supported operations are equivalent to EVM's bn256add, bn256ScalarMult, and bn256Pairing. (to be activated in [v1.17](https://github.com/solana-labs/solana/issues/33398))
+* Altbn128 g1 & g2 compression [Syscall](https://github.com/solana-labs/solana/blob/master/sdk/program/src/alt_bn128/compression.rs) - Halves groth16 proof bytes sent on-chain to 128b. (to be activated in [v1.17](https://github.com/solana-labs/solana/issues/33398))
 
 ### Solana Vended Contracts/Programs  
 
@@ -28,8 +29,13 @@ Notably
 
 ### Solana Ecosystem Zk Projects
 * Elusiv - [V1 Verifier Contract](https://github.com/elusiv-privacy/elusiv/blob/master/elusiv/src/instruction.rs) 
-* Light Protocol - [Repo](https://github.com/Lightprotocol/light-protocol) also docs [docs](https://docs.lightprotocol.com/core-concepts/lifecycle-of-a-light-transaction)
-* * [Groth16 Verifier ](https://github.com/Lightprotocol/groth16-solana)
+* Light Protocol - A ZK layer for general-purpose private smart contract (PSP) execution. [Repo](https://github.com/Lightprotocol/light-protocol) also [docs](https://docs.lightprotocol.com/core-concepts/lifecycle-of-a-light-transaction)
+  * [Groth16 Verifier ](https://github.com/Lightprotocol/groth16-solana) (This verifier is compatible with the altbn128 syscalls)
+  * [Light-Poseidon](https://crates.io/crates/light-poseidon) (Used by Solana)
+  * [Macro-Circom](https://github.com/Lightprotocol/light-protocol/blob/main/macro-circom/src/main.rs) (Macros for the Circom language, used by PSPs built with Light)
+  * [Sparse merkle-tree implementation](https://github.com/Lightprotocol/light-protocol/blob/main/merkle-tree/src/lib.rs) (compatible with the Poseidon hash syscall)
+  * [Reference implementation](https://github.com/Lightprotocol/breakpoint-workshop) for an encrypted swap PSP.
+    
 * Another Groth16 [Verifier ](https://github.com/aneopsy/groth16-sol-verifier/blob/main/README.md)
 * Yet another Groth16 [Verifier](https://github.com/zkLinkProtocol/groth16-sol-verifier)
 * Possibly some good examples of varios proof systems relating to solana [Click Here](https://github.com/umi-ag/sion/tree/alpha/crates-solana)
