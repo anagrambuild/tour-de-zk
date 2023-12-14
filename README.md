@@ -12,7 +12,7 @@ In summary, Solana presents a compelling combination of technical capabilities f
 ## Solana ZK features
 
 ### Runtime features
-All the avaialabler syscalls are here [Syscalls](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/syscalls/definitions.rs#L65).
+All the available syscalls are here [Syscalls](https://github.com/solana-labs/solana/blob/501458a7daa023eb2c64a18d54ad618d4305af68/sdk/program/src/syscalls/definitions.rs#L65).
 
 Syscalls allow these computations to be cheaper within the SVM.
 Notably
